@@ -2,7 +2,7 @@ Mantis Development
 
 PoW+PoS
 Algorithm: x11
-Acronym: MTS
+Acronym: MNS
 Block Time: 60 Seconds
 PoW Phase lasting 7 days (10080 Blocks)
 PoS Phase starts Block 10080
