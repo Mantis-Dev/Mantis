@@ -1733,7 +1733,7 @@ static const int kNumThreads = 4;
 static const int kTestSeconds = 10;
 static const int kNumKeys = 1000;
 
-struct MTState {
+struct MNState {
   DBTest* test;
   port::AtomicPointer stop;
   port::AtomicPointer counter[kNumThreads];
@@ -1741,7 +1741,7 @@ struct MTState {
 };
 
 struct MTThread {
-  MTState* state;
+  MNState* state;
   int id;
 };
 
@@ -1795,7 +1795,7 @@ static void MTThreadBody(void* arg) {
 TEST(DBTest, MultiThreaded) {
   do {
     // Initialize state
-    MTState mt;
+    MNState mt;
     mt.test = this;
     mt.stop.Release_Store(0);
     for (int id = 0; id < kNumThreads; id++) {
